@@ -1,6 +1,5 @@
-# Terminator
+# Terminator. @Version: 0.1
 # Program: "T800 in action", based on movie "TERMINATOR-2" 1984
-# @Version: 0.1
 # @Author: Alexander Machnev
  
 ТЗ Терминатор (по мотивам фильма Терминатор 1984 г)
