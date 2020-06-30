@@ -1,4 +1,7 @@
-# terminator
+# Terminator. @Version: 0.1
+# Program: "T800 in action", based on movie "TERMINATOR-2" 1984
+# @Author: Alexander Machnev
+ 
 ТЗ Терминатор (по мотивам фильма Терминатор 1984 г)
 
 Цель - приобретение первоначальных навыков ООП программирования:
