@@ -1,5 +1,7 @@
 package terminator;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class Human implements HumanI {
@@ -7,10 +9,67 @@ public class Human implements HumanI {
     private String name; //имя человека
     private String size; //размер одежды
     private String item; //вещь или оружие
-    private String answer;
+    private static int qtyNames; //кол-во имен для списка байкеров
+    private String answer; //ответ человека или робота на требование или вопрос
     private boolean live = true;
     private String destination;
-    //мэп, описывающий название вещи или ее: характеристики, названия, размеры
+
+
+    static List namesList = new ArrayList();//список имен
+    List<Human> bikersList = new ArrayList();//список байкеров
+
+    public List addNames() { //создаем список имен для байкеров
+        //наполняем список с именами
+        namesList.add("Bill");
+        namesList.add("Jhon");
+        namesList.add("Nathan");
+
+        return namesList;
+    }
+
+    public static int getQtyNames(){
+        qtyNames = namesList.size();
+
+        System.out.println("Кол-во имен\n" + qtyNames);
+        return qtyNames;
+    }
+
+
+    List sizesList = new ArrayList();//список размеров одежды
+    List itemsList = new ArrayList();//список вещей
+
+    // ---- закидываем вещи, имена и размеры байкеров ----
+
+    //наполняем список размеров одежды
+        sizesList.add("L");
+        sizesList.add("S");
+        sizesList.add("XL");
+
+    //наполняем список вещей
+        itemsList.add("Beer");
+        itemsList.add("Cards");
+        itemsList.add("Shotgun");
+
+        for (int i=0;i<3;i++){ //создаем ,байкеров в цикле и помещаем их в список
+        String name = (String) namesList.get(i);//кастуем элемент массива в строковую переменую
+        String size = (String) sizesList.get(i);//кастуем элемент массива в строковую переменую
+        String item = (String) itemsList.get(i);//кастуем элемент массива в строковую переменую
+        Human biker = new Human(name,size,item);
+        //System.out.println("\nИмя байкера: " + biker.getName() + "\nРазмер одежды: " + biker.getSize() + "\nВещь: " +biker.getItem());
+        bikersList.add(biker);
+    }
+
+    //выводим имена, размеры и вещи байкеров. Способ № 1
+        for(int i=0; i<bikersList.size();i++){
+        System.out.println("------------------------------");
+        Human tempBiker = bikersList.get(i);
+        System.out.println("Имя: " + tempBiker.getName());
+        System.out.println("Размер: " + tempBiker.getSize());
+        System.out.println("Вещь: " + tempBiker.getItem());
+
+        if (i >=(namesList.size()-1)){
+            System.out.println("------------------------------");}
+    }
 
     //конструктор человека. В параметрах подставляем имя, размер одежды и вещь
     public Human(String name,String size, String item) {
