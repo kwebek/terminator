@@ -16,6 +16,7 @@ public interface HumanI {
     void drive(String driveTo); //ехать куда то
     void run(); //бегать
     String getAnswer();
+    int getQtyNames(); //получаем кол-во имен байкеров
     void talk(String words); //говорить
     void take(boolean take, String thing); //брать что либо
     void give(boolean give, String thing); //отдавать что либо

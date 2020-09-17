@@ -15,13 +15,10 @@ import java.util.*;
 public class Terminator1991 {
 
 
-
     public static void main(String[] args) throws InterruptedException, IndexOutOfBoundsException {
         String curTarget = "nobody";
 
-        Human.getQtyNames(); //получаем кол-во имен для списка байкеров
-
-
+        
         Terminator terminator = new Terminator("T-800");//создаем терминатора T-800
         Human sarah = new Human("Sarah Connor", "M", "Desert Eagle");//создаем человека Sarah Connor
 

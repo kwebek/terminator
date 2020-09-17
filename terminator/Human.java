@@ -17,6 +17,8 @@ public class Human implements HumanI {
 
     static List namesList = new ArrayList();//список имен
     List<Human> bikersList = new ArrayList();//список байкеров
+    List sizesList = new ArrayList();//список размеров одежды
+    List itemsList = new ArrayList();//список вещей
 
     public List addNames() { //создаем список имен для байкеров
         //наполняем список с именами
@@ -27,16 +29,13 @@ public class Human implements HumanI {
         return namesList;
     }
 
-    public static int getQtyNames(){
+    public int getQtyNames(){
         qtyNames = namesList.size();
 
         System.out.println("Кол-во имен\n" + qtyNames);
         return qtyNames;
     }
 
-
-    List sizesList = new ArrayList();//список размеров одежды
-    List itemsList = new ArrayList();//список вещей
 
     // ---- закидываем вещи, имена и размеры байкеров ----
 
