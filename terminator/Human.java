@@ -16,8 +16,9 @@ public class Human implements HumanI {
 
 
     static List namesList = new ArrayList();//список имен
+    static List sizesList = new ArrayList();//список размеров одежды
     List<Human> bikersList = new ArrayList();//список байкеров
-    List sizesList = new ArrayList();//список размеров одежды
+
     List itemsList = new ArrayList();//список вещей
 
     public List addNames() { //создаем список имен для байкеров
@@ -29,6 +30,25 @@ public class Human implements HumanI {
         return namesList;
     }
 
+    public List addSizes() { //наполняем список размеров одежды
+
+        sizesList.add("L");
+        sizesList.add("S");
+        sizesList.add("XL");
+
+        return sizesList;
+    }
+    public List addItems() {
+        //наполняем список вещей
+        itemsList.add("Beer");
+        itemsList.add("Cards");
+        itemsList.add("Shotgun");
+
+        return itemsList;
+    }
+
+
+
     public int getQtyNames(){
         qtyNames = namesList.size();
 
@@ -36,27 +56,20 @@ public class Human implements HumanI {
         return qtyNames;
     }
 
+public List createBikersList() {
 
-    // ---- закидываем вещи, имена и размеры байкеров ----
-
-    //наполняем список размеров одежды
-        sizesList.add("L");
-        sizesList.add("S");
-        sizesList.add("XL");
-
-    //наполняем список вещей
-        itemsList.add("Beer");
-        itemsList.add("Cards");
-        itemsList.add("Shotgun");
-
-        for (int i=0;i<3;i++){ //создаем ,байкеров в цикле и помещаем их в список
+    for (int i = 0; i < 3; i++) { //создаем ,байкеров в цикле и помещаем их в список
         String name = (String) namesList.get(i);//кастуем элемент массива в строковую переменую
         String size = (String) sizesList.get(i);//кастуем элемент массива в строковую переменую
         String item = (String) itemsList.get(i);//кастуем элемент массива в строковую переменую
-        Human biker = new Human(name,size,item);
+        Human biker = new Human(name, size, item);
         //System.out.println("\nИмя байкера: " + biker.getName() + "\nРазмер одежды: " + biker.getSize() + "\nВещь: " +biker.getItem());
         bikersList.add(biker);
     }
+    
+    return bikersList;}
+
+
 
     //выводим имена, размеры и вещи байкеров. Способ № 1
         for(int i=0; i<bikersList.size();i++){
